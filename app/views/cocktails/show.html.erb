@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+</head>
+<body>
+  <div class="container">
+    <h1>Cocktails#show</h1>
+    <p>Find me in app/views/cocktails/show.html.erb</p>
+
+    <h2><%= @cocktail.name %></h2>
+
+    <%= link_to edit_cocktail_path(@cocktail) do %>
+    <i class="far fa-edit"></i> Edit
+    <% end %>
+
+    <%= link_to cocktail_doses_path(@cocktail) do %>
+    <i class="fas fa-cocktail"></i> Recipe
+    <% end %>
+
+    <%= link_to cocktail_path(@cocktail), method: :delete, data:{confirm: "Delete this cocktail?"} do %><i class="far fa-trash-alt"></i> Delete<% end %>
+    <p><%= link_to "Return to the cocktail list", cocktails_path%></p>
+  </div>
+
+</body>
+</html>
+

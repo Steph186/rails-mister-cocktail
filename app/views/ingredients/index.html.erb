@@ -1,0 +1,43 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+</head>
+<body>
+<div class="container">
+  <h1>Ingredients#index</h1>
+  <p>Find me in app/views/ingredients/index.html.erb</p>
+
+  <p>
+    <%= link_to new_ingredient_path do %>
+    <i class="fas fa-plus"></i> Add a new ingredient
+    <% end %>
+  </p>
+
+  <p>
+    <%= link_to cocktails_path do %>
+    <i class="far fa-eye"></i> Return to the cocktail list
+    <% end %>
+  </p>
+
+  <% @ingredients.each do |ingredient| %>
+  <ul>
+      <%= ingredient.name %>
+      <%= link_to ingredient_path(ingredient), method: :delete, data:{confirm: "Delete this ingredient?"} do %><i class="far fa-trash-alt"></i>
+          <%= link_to edit_ingredient_path(ingredient) do %>
+            <i class="far fa-edit"></i>
+          <% end %>
+      <% end %>
+  </ul>
+  <% end %>
+
+</div>
+
+</body>
+</html>
