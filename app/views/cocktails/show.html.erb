@@ -14,12 +14,12 @@
 
     <h2><%= @cocktail.name %></h2>
 
-    <%= link_to edit_cocktail_path(@cocktail) do %>
-    <i class="far fa-edit"></i> Edit
+    <% @doses.each do |dose| %>
+    <p><%= dose.ingredient.name %> (<%= dose.quantity %>)</p>
     <% end %>
 
-    <%= link_to cocktail_doses_path(@cocktail) do %>
-    <i class="fas fa-cocktail"></i> Recipe
+    <%= link_to edit_cocktail_path(@cocktail) do %>
+    <i class="far fa-edit"></i><i class="fas fa-cocktail"></i> Edit
     <% end %>
 
     <%= link_to cocktail_path(@cocktail), method: :delete, data:{confirm: "Delete this cocktail?"} do %><i class="far fa-trash-alt"></i> Delete<% end %>
@@ -28,4 +28,3 @@
 
 </body>
 </html>
-

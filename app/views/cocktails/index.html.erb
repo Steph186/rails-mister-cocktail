@@ -24,13 +24,11 @@
   </p>
 
   <% @cocktails.each do |cocktail| %>
-  <ul>
-    <li>
+
+  <div class="one-cocktail">
       <%= link_to cocktail.name, cocktail_path(cocktail) %>
       <%= link_to cocktail_path(cocktail), method: :delete, data:{confirm: "Delete this cocktail?"} do %><i class="far fa-trash-alt"></i><% end %>
-
-    </li>
-  </ul>
+  </div>
   <% end %>
 </div>
 

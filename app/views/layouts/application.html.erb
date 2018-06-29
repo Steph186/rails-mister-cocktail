@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>RailsMisterCocktail</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -9,7 +10,10 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+
   <body>
+    <%= render partial: "layouts/navbar" %>
     <%= yield %>
+    <%= render partial: "layouts/footer" %>
   </body>
 </html>
